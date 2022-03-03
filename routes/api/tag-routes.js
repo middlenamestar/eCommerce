@@ -9,6 +9,7 @@ router.get('/', async (req, res) => {
     const tags = await Tag.findAll({
       include: Product
     });
+    res.status(200).json(tags);
   } catch (err) {
     res.status(500).json(err);
   }
